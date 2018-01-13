@@ -18,11 +18,11 @@ const input = document.getElementById('userInput');
 
 const search = () => {
   const ul = document.getElementsByClassName('photos');
-  const li = ul.getElementsByTagName('li');
+  const li = document.getElementsByTagName('li');
   const filter = input.value.toUpperCase();
 
-  for (i = 0; i <li.length; i ++) {
-    let imageTitle = i.getAttribute('data-title');
+  for (i = 0; i < li.length; i++) {
+    let imageTitle = li['data-title'];
     if (imageTitle.indexOf(filter) > -1) {
       li[i].style.display = "";
     } else {
