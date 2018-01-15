@@ -14,7 +14,7 @@ search.addEventListener('keyup', () => {
   }
 });
 */
-const input = document.getElementById('userInput');
+/*const input = document.getElementById('userInput');
 
 const search = () => {
   const ul = document.getElementsByClassName('photos');
@@ -32,3 +32,20 @@ const search = () => {
 }
 
 input.addEventListener('keyup', search);
+*/
+const input = document.getElementById('userInput');
+const userInput = input.value.toUpperCase();
+const li = document.getElementsByTagName('li');
+const image = document.getElementsByTagName('img[alt]');
+
+input.addEventListener('keyup', function() {
+
+   for(let i = 0; i < li.length; i++){
+      if(userInput.indexOf(image) > -1 ){
+        li[i].style.display = "";
+      } else {
+        //document.images[i].style.display = "none";
+        li[i].style.display = "none";
+      }
+    }
+});
