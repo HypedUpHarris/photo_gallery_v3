@@ -36,16 +36,25 @@ input.addEventListener('keyup', search);
 const input = document.getElementById('userInput');
 const userInput = input.value.toUpperCase();
 const li = document.getElementsByTagName('li');
-const image = document.getElementsByTagName('img[alt]');
+const image = document.querySelectorAll('img[alt]');
+const titleSearch = () => {
 
-input.addEventListener('keyup', function() {
+  for(let i = 0; i < li.length; i++){
 
-   for(let i = 0; i < li.length; i++){
-      if(userInput.indexOf(image) > -1 ){
-        li[i].style.display = "";
+      if (image[i].textContent.toUpperCase().indexOf(userInput) > -1) {
+        image[i].style.display = '';
+        console.log(li[i].style.display);
       } else {
-        //document.images[i].style.display = "none";
-        li[i].style.display = "none";
+        image[i].style.display = 'none';
+        console.log(li[i].style.display);
       }
     }
-});
+}
+input.addEventListener("keyup", titleSearch);
+// for (let i = 0; i < li.length; i++){
+//   if (userInput == image){
+//     li[i].style.display = '';
+//   } else {
+//     li[i].style.display = 'none';
+//   }
+// }
